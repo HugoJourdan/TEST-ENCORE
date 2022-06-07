@@ -24,11 +24,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-       # AGENT_TOOLSDIRECTORY=/Users/runner/hostedtoolcache
       - uses: actions/checkout@v3
+      
+      - name : TESTAGENT
+        run: |
+          AGENT_TOOLSDIRECTORY=/Users/runner/hostedtoolcache
       
       # Install pyhton
       - name: setup python
+
         uses: actions/setup-python@v2
       - name : TEST
         run: |
